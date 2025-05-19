@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="hi">
+<script type='text/javascript' src='//pl26688018.profitableratecpm.com/a6/d3/0d/a6d30de343a10557c94c44f31c06a58b.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ईद अल-अधा मुबारक!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #3a2d1d;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* सितारे और चाँद के स्टाइल्स (पहले जैसे ही) */
+        .star {
+            position: absolute; background-color: white; border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out; z-index: 0;
+            box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #f0e68c;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.7); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .shooting-star {
+            position: absolute; width: 2px; height: 60px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(255,255,255,0));
+            border-radius: 50% / 10px; animation: shoot linear infinite; opacity: 0; z-index: 0;
+        }
+        @keyframes shoot {
+            0% { transform: translateY(-100px) translateX(0px) rotate(45deg); opacity: 0; }
+            10% { opacity: 1; } 90% { opacity: 1; }
+            100% { transform: translateY(calc(100vh + 100px)) translateX(calc(100vw * 0.8)) rotate(45deg); opacity: 0; }
+        }
+        #animatedMoon {
+            position: absolute; top: 40px; right: 60px; width: 90px; height: auto;
+            animation: moonDrift 15s ease-in-out infinite alternate,
+                       moonPulsateGlow 4s ease-in-out infinite alternate,
+                       moonSubtleRotate 25s linear infinite;
+            z-index: 0; filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 15px #f0f0c0);
+        }
+        @keyframes moonDrift {
+            0% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-10px) translateX(5px); }
+            50% { transform: translateY(5px) translateX(-10px); }
+            75% { transform: translateY(-5px) translateX(10px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+        @keyframes moonPulsateGlow {
+            0% { filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 15px #f0f0c0) brightness(100%); }
+            50% { filter: drop-shadow(0 0 12px #fff) drop-shadow(0 0 25px #f0f0c0) brightness(120%); }
+            100% { filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 15px #f0f0c0) brightness(100%); }
+        }
+        @keyframes moonSubtleRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .container {
+            background-color: rgba(20, 10, 0, 0.75); padding: 30px; border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255, 223, 186, 0.3); max-width: 500px; width: 100%;
+            position: relative; z-index: 1; border: 2px solid #b8860b;
+        }
+        #eidImage {
+            max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px; border: 3px solid #90EE90;
+        }
+        h1 { color: #FFD700; margin-bottom: 10px; text-shadow: 1px 1px 5px #000; }
+        .sender-name-display {
+            font-size: 1.8em; font-weight: bold; color: #FFA07A; margin-bottom: 25px;
+            animation: pulseName 2s infinite; text-shadow: 1px 1px 3px #222;
+        }
+        @keyframes pulseName {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .input-group { margin-top: 20px; margin-bottom: 15px; }
+        .input-group label { color: #f5deb3; font-weight: bold; display: block; margin-bottom: 5px; }
+        #nameInput {
+            padding: 12px 15px; font-size: 1em; border-radius: 8px; border: 1px solid #b8860b;
+            background-color: #f5f5dc; color: #333; width: calc(100% - 32px);
+            box-sizing: border-box; margin-bottom: 10px; text-align: left;
+        }
+        
+        /* व्हाट्सएप शेयर बटन के लिए स्टाइल */
+        #directWhatsappShareButton {
+            background-color: #25D366; /* व्हाट्सएप हरा */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em; /* आइकन के लिए थोड़ा बड़ा */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: 1px solid #f0f0f0;
+            margin-top: 10px;
+        }
+        #directWhatsappShareButton:hover:not(:disabled) {
+            background-color: #1DA851; /* गहरा व्हाट्सएप हरा */
+            transform: translateY(-2px);
+        }
+        #directWhatsappShareButton:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            border-color: #999;
+        }
+
+        .footer-text {
+            margin-top: 30px; font-size: 0.9em; color: #D2B48C; position: relative; z-index: 1;
+        }
+        /* छिपा हुआ लिंक फ़ील्ड (केवल JS द्वारा उपयोग के लिए) */
+        #hiddenGeneratedLink {
+            display: none;
+        }
+
+    </style>
+<script type='text/javascript' src='//pl26688018.profitableratecpm.com/a6/d3/0d/a6d30de343a10557c94c44f31c06a58b.js'></script>
+</head>
+<body>
+    <div id="shooting-stars-container"></div>
+
+    <div class="container">
+        <img id="eidImage" src="eid_mubarak.gif" alt="ईद अल-अधा मुबारक GIF">
+
+        <h1 id="mainGreeting">ईद अल-अधा मुबारक!</h1>
+        <div id="senderGreeting" style="display: none;">
+            <p><span id="senderNameDisplay" class="sender-name-display"></span> की ओर से</p>
+        </div>
+
+        <div class="input-group">
+            <label for="nameInput">अपना नाम लिखें और व्हाट्सएप पर भेजें:</label>
+            <input type="text" id="nameInput" placeholder="यहाँ अपना नाम लिखें" onkeyup="checkNameInput()">
+            <button id="directWhatsappShareButton" onclick="shareDirectlyOnWhatsApp()" disabled>
+                <i class="fab fa-whatsapp"></i> व्हाट्सएप पर भेजें
+            </button>
+        </div>
+        
+        <!-- यह फ़ील्ड अब उपयोगकर्ता को नहीं दिखेगा, पर लिंक जनरेट करने के लिए JS इसका उपयोग करेगा -->
+        <input type="text" id="hiddenGeneratedLink" readonly>
+
+    </div>
+<script type='text/javascript' src='//pl26688018.profitableratecpm.com/a6/d3/0d/a6d30de343a10557c94c44f31c06a58b.js'></script>
+ <script type="text/javascript">
+	atOptions = {
+		'key' : 'd8e385f17ee2e8fe8dc6cc97d85ed9d8',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/d8e385f17ee2e8fe8dc6cc97d85ed9d8/invoke.js"></script>
+
+  <script async="async" data-cfasync="false" src="//pl26685547.profitableratecpm.com/ba781f7b2c7a4625e9409866b339ca07/invoke.js"></script>
+<div id="container-ba781f7b2c7a4625e9409866b339ca07"></div> 
+<p class="footer-text">सभी को ईद अल-अधा मुबारक!</p>
+
+    <script>
+        // सितारे और शूटिंग स्टार बनाने वाले फंक्शन (पहले जैसे ही)
+        function createTwinklingStars() {
+            const c = document.body, n = 150;
+            for (let i = 0; i < n; i++) {
+                let s = document.createElement('div'); s.className = 'star';
+                s.style.top = Math.random()*100+'%'; s.style.left = Math.random()*100+'%';
+                const z = Math.random()*2+0.5; s.style.width=z+'px'; s.style.height=z+'px';
+                s.style.animationDelay = Math.random()*3+'s'; s.style.animationDuration = (Math.random()*2+2)+'s';
+                c.appendChild(s);
+            }
+        }
+        function createShootingStars() {
+            const c = document.getElementById('shooting-stars-container') || document.body, n = 5;
+            for(let i=0;i<n;i++){
+                let s=document.createElement('div'); s.className='shooting-star';
+                s.style.left = Math.random()*100+'%'; s.style.animationDelay = Math.random()*10+'s';
+                s.style.animationDuration = Math.random()*3+2+'s'; c.appendChild(s);
+            }
+        }
+
+        window.onload = function() {
+            createTwinklingStars();
+            createShootingStars();
+            checkNameInput(); // पेज लोड पर भी चेक करें (यदि URL में नाम है)
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const sender = urlParams.get('sender');
+
+            if (sender) {
+                const decodedSender = decodeURIComponent(sender);
+                document.getElementById('mainGreeting').textContent = `आपको भी ईद मुबारक!`;
+                const senderNameDisplay = document.getElementById('senderNameDisplay');
+                senderNameDisplay.textContent = decodedSender;
+                document.getElementById('senderGreeting').style.display = 'block';
+            }
+        };
+
+        function checkNameInput() {
+            const nameInput = document.getElementById('nameInput').value.trim();
+            const whatsappButton = document.getElementById('directWhatsappShareButton');
+            if (nameInput === "") {
+                whatsappButton.disabled = true;
+            } else {
+                whatsappButton.disabled = false;
+            }
+        }
+
+        function shareDirectlyOnWhatsApp() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+
+            if (name === "") {
+                alert("कृपया अपना नाम दर्ज करें।");
+                return; // यह वैसे तो disabled होने के कारण नहीं होना चाहिए, पर सुरक्षा के लिए।
+            }
+
+            // लिंक जनरेट करें (इसे दिखाने की जरूरत नहीं)
+            const encodedName = encodeURIComponent(name);
+            const baseUrl = window.location.href.split('?')[0]; // मौजूदा URL पैरामीटर हटाकर बेस URL
+            const generatedLink = `${baseUrl}?sender=${encodedName}`;
+            document.getElementById('hiddenGeneratedLink').value = generatedLink; // यदि भविष्य में कहीं दिखाना हो तो
+
+            // व्हाट्सएप संदेश बनाएं
+            let message = `${name} की ओर से ईद अल-अधा मुबारक! 🌙✨\n\nयह शुभकामनाएँ देखें:\n${generatedLink}`;
+            
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank'); // व्हाट्सएप को नई टैब/ऐप में खोलें
+        }
+    </script>
+<script type='text/javascript' src='//pl26688018.profitableratecpm.com/a6/d3/0d/a6d30de343a10557c94c44f31c06a58b.js'></script>
+</body>
+</html>
